@@ -5,6 +5,6 @@ It was also dockerized using the help of this website https://dzone.com/articles
 As long as you have docker desktop installed it should be fairly straightforward. Simply enter the main project directory and run this in the terminal: 
 
 docker-compose build
-docker-compose up 
+docker-compose up
 
 Everything should be configured to run on localhost:3000.
