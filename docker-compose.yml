@@ -1,0 +1,27 @@
+version: "3"
+services:
+  
+  ui:
+   build:
+      context: ./client
+      dockerfile: Dockerfile
+   ports:
+    -  3000:3000
+   container_name: mern-ui
+   volumes:
+    -  ./client/src:/usr/app/src
+    -  ./client/public:/usr/app/public
+   depends_on:
+    - api
+   stdin_open: true
+   tty: true
+
+  api:
+   build:
+      context: ./api
+      dockerfile: Dockerfile
+   ports:
+     - 3001:3001
+   container_name: mern-api
+   volumes:
+    - ./api/src:/usr/app/src
